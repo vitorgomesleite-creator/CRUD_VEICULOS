@@ -6,3 +6,4 @@ module.exports = (app,express) => {
     router(app,express);
     tabelas.init(conexao);
 }
+
