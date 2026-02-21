@@ -8,6 +8,14 @@ class VeiculosController{
             .catch((error) => res.status(400).json(error.message));
     }
 
+    buscarPorId(req,res){
+        const { id } = req.params;
+        const veiculos = veiculosModel.buscarPorId(id);
+        return veiculos
+            .then(resultbuscarPorId=> res.status(200).json(resultbuscarPorId))
+            .catch(error=> res.status(400).json(error.message));  
+    }
+
     criar(req,res){
         const novoVeiculo = req.body;
         const veiculos = veiculosModel.criar(novoVeiculo);

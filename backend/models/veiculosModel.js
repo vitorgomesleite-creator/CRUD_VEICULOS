@@ -13,8 +13,13 @@ const conexao = require("../infraestrutura/conexao")
     } 
 
     listar(){
-        const sql = "SELECT * FROM VEICULOS"
+        const sql = "SELECT * FROM veiculos"
         return this.executaQuery(sql);
+    }
+
+    buscarPorId(id){
+        const sql = "SELECT * FROM veiculos WHERE id = ?";
+        return this.executaQuery(sql,id);
     }
 
     criar(novoVeiculo){
@@ -27,7 +32,7 @@ const conexao = require("../infraestrutura/conexao")
         return this.executaQuery(sql,[veiculoAtualizado,id]);
     }
 
-    deletar (veiculoDeletado,id){
+    deletar (id){
         const sql ="DELETE FROM veiculos WHERE id = ?";
         return this.executaQuery(sql,id);
     }

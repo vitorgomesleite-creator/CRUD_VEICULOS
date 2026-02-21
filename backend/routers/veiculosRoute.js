@@ -9,5 +9,7 @@ router.post("/veiculos",veiculosController.criar);
 router.put("/veiculos/:id",veiculosController.atualizar); 
 
 router.delete("/veiculos/:id",veiculosController.deletar);
+
+router.get("/veiculos/:id",veiculosController.buscarPorId);
  
 module.exports = router;
